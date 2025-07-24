@@ -30,12 +30,14 @@ server.use(fileupload({
 
 server.use(express.json());
 server.use(cors({
-    origin: '*', // Replace with your frontend's URL
-    credentials: true, // Allow cookies and credentials
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: function (origin, callback) {
+    // Allow all origins (even undefined for tools like Postman)
+    callback(null, origin || '*');
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-
 server.use(express.urlencoded({ extended: true }));
 server.use(errorHandler)
 // router set
