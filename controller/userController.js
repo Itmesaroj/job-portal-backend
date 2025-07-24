@@ -1,7 +1,7 @@
 const UserModel = require("../Model/UserModel");
 const cloudinary = require("cloudinary").v2;
 const generateToken = require("../utils/generateToke");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const saltRounds = 10;
 
 // Register function
