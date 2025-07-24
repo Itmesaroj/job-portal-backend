@@ -30,7 +30,7 @@ server.use(fileupload({
 
 server.use(express.json());
 server.use(cors({
-    origin: 'https://jobmyportal.netlify.app/', // Replace with your frontend's URL
+    origin: 'https://jobmyportal.netlify.app', // Replace with your frontend's URL
     credentials: true, // Allow cookies and credentials
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
